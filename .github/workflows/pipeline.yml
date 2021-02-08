@@ -34,3 +34,7 @@ jobs:
           push: true
           tags: |
             acouvreur/tautulli-hue-cinema:latest
+
+      - 
+        name: update service
+        run: curl -X POST ${{ secrets.UPDATE_SERVICE }}
