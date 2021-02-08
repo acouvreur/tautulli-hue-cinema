@@ -4,7 +4,7 @@ import { turnOffLightGroup, turnOnLightGroup } from './cinema.js';
 
 const app = express();
 const port = 3000;
-const groupId = 1;
+const groupId = process.env.LIGHT_GROUP_ID;
 
 app.use(morgan('combined'));
 

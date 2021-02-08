@@ -1,7 +1,7 @@
 import hue from 'node-hue-api';
 
 const v3 = hue.v3;
-const USERNAME = process.env.USERNAME;
+const USERNAME = process.env.HUE_USERNAME;
 
 function turnOnLightGroup(groupId) {
   return v3.discovery

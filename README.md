@@ -12,5 +12,5 @@
 
 ## Environment variables
 
-- `GROUP_ID`
-- `USER`
+- `LIGHT_GROUP_ID`
+- `HUE_USERNAME`
