@@ -1,0 +1,17 @@
+{
+  "name": "tautulli-hue-cinema",
+  "version": "1.0.0",
+  "description": "API reacting to Tautulli webhooks to control the lights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexis Couvreur",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-hue-api": "^4.0.10"
+  }
+}
