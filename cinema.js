@@ -26,4 +26,4 @@ function turnOffLightGroup(groupId) {
     });
 }
 
-export { turnOffLightGroup, turnOnLightGroup };
+module.exports = { turnOffLightGroup, turnOnLightGroup };
