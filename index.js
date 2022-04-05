@@ -1,6 +1,6 @@
-import express from 'express';
-import morgan from 'morgan';
-import { turnOffLightGroup, turnOnLightGroup } from './cinema.js';
+const express = require('express');
+const morgan = require('morgan');
+const { turnOffLightGroup, turnOnLightGroup } = require('./cinema.js');
 
 const app = express();
 const port = 3000;
