@@ -2,9 +2,6 @@ name: Docker
 
 on:
   push:
-    branches:
-      - main
-      - beta
     tags:
       - "v*"
   pull_request:
