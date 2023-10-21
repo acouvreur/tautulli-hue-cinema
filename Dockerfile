@@ -18,8 +18,8 @@ RUN make BUILDTIME=${BUILDTIME} VERSION=${VERSION} GIT_REVISION=${REVISION} ${TA
 
 FROM alpine:3.18.3
 
-COPY --from=build /app/tautulli-home-cinema* /usr/bin/tautulli-home-cinema
+COPY --from=build /app/tautulli-hue-cinema* /usr/bin/tautulli-hue-cinema
 
 EXPOSE 8080
 
-ENTRYPOINT [ "/usr/bin/tautulli-home-cinema" ]
+ENTRYPOINT [ "/usr/bin/tautulli-hue-cinema" ]
