@@ -1,17 +1,25 @@
-FROM node:18-alpine
+FROM golang:1.21 AS build
 
 WORKDIR /app
 
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
 
-RUN npm ci --silent
+COPY main.go main.go
+COPY Makefile Makefile
 
-COPY . ./
+ARG BUILDTIME
+ARG VERSION
+ARG REVISION
+ARG TARGETOS
+ARG TARGETARCH
+RUN make BUILDTIME=${BUILDTIME} VERSION=${VERSION} GIT_REVISION=${REVISION} ${TARGETOS}/${TARGETARCH}
 
-EXPOSE 3000
+FROM alpine:3.18.3
 
-ENTRYPOINT [ "npm" ]
+COPY --from=build /app/tautulli-home-cinema* /usr/bin/tautulli-home-cinema
 
-CMD ["start"]
+EXPOSE 8080
+
+ENTRYPOINT [ "/usr/bin/tautulli-home-cinema" ]
